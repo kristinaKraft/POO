@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AulaPOO
+{
+    class Carro
+    {
+        /*atributos da classe*/
+        public string placa;
+        public string marca;
+        public string modelo;
+        public string cor; 
+        
+
+        /*metodos*/
+        public void display()
+        {
+            Console.WriteLine();
+            Console.WriteLine(placa);
+            Console.WriteLine(marca);
+            Console.WriteLine(modelo);
+            Console.WriteLine(cor);            
+        }
+
+        public double autonomia(double mediaKm)
+        {
+            return capacidadeTanqueCombustivel * mediaKm;
+        }
+
+       
+    }
+    namespace Encapsulamento
+    {
+        class Carro
+        {
+            private string placa;
+
+            public string placa
+            {
+                get { return placa; }
+                set
+                {
+                    if (value.Length < 4)
+                    {
+                        Console.WriteLine("Placa precisa ter no minimo quatro caracteres");
+                    }
+                    else
+                    {
+                        placa = value;
+                    }
+                }
+            }
+
+            public int modelo { get; set; }
+            public string Situacao
+            {
+                get
+                {
+                    string modelo = "maior";
+                    if (modelo < 4) { modelo = "menor"; }
+                    return modelo;
+                }
+            }
+            public string ToString()
+            {
+                return $"modelo: {modelo}';
+            }
+        }
+    }
+}
